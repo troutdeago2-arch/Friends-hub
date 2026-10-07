@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Friends Hub</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- LOGIN -->
+  <div id="loginScreen" class="login-screen">
+
+    <div class="login-box">
+
+      <div class="logo">👥</div>
+
+      <h1>Friends Hub</h1>
+
+      <p>Private space for your friends.</p>
+
+      <input
+        id="nameInput"
+        type="text"
+        placeholder="Your name"
+        maxlength="30"
+      >
+
+      <input
+        id="codeInput"
+        type="password"
+        placeholder="Friends code"
+      >
+
+      <button onclick="login()">
+        Enter Friends Hub
+      </button>
+
+      <p id="loginError" class="error"></p>
+
+    </div>
+
+  </div>
+
+
+  <!-- WEBSITE -->
+  <div id="website" class="hidden">
+
+    <header>
+
+      <div>
+        <h1>👥 Friends Hub</h1>
+        <span id="welcomeText"></span>
+      </div>
+
+      <button class="logout" onclick="logout()">
+        Log out
+      </button>
+
+    </header>
+
+
+    <!-- NAVIGATION -->
+
+    <nav>
+
+      <button
+        class="nav-button active"
+        onclick="openPage('home', this)"
+      >
+        🏠 Home
+      </button>
+
+      <button
+        class="nav-button"
+        onclick="openPage('photos', this)"
+      >
+        📸 Photos
+      </button>
+
+      <button
+        class="nav-button"
+        onclick="openPage('chat', this)"
+      >
+        💬 Chat
+      </button>
+
+    </nav>
+
+
+    <main>
+
+      <!-- HOME -->
+
+      <section id="home">
+
+        <div class="hero">
+
+          <h2>Welcome to the group 🎉</h2>
+
+          <p>
+            A private place for your friends to share
+            memories and messages.
+          </p>
+
+        </div>
+
+
+        <div class="cards">
+
+          <div class="card">
+            <h3>📸 Photos</h3>
+            <p>
+              Add your favourite memories.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>💬 Chat</h3>
+            <p>
+              Talk with your friends.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>🔒 Private</h3>
+            <p>
+              Friends need the code to enter.
+            </p>
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- PHOTOS -->
+
+      <section id="photos" class="hidden">
+
+        <h2>📸 Photos</h2>
+
+        <label class="upload-button">
+
+          ＋ Add Photos
+
+          <input
+            id="photoInput"
+            type="file"
+            accept="image/*"
+            multiple
+          >
+
+        </label>
+
+
+        <div id="photoGallery" class="photo-gallery"></div>
+
+      </section>
+
+
+      <!-- CHAT -->
+
+      <section id="chat" class="hidden">
+
+        <h2>💬 Group Chat</h2>
+
+        <div id="messages" class="messages"></div>
+
+
+        <form id="chatForm">
+
+          <input
+            id="messageInput"
+            type="text"
+            maxlength="300"
+            placeholder="Write a message..."
+          >
+
+          <button type="submit">
+            Send
+          </button>
+
+        </form>
+
+      </section>
+
+    </main>
+
+  </div>
+
+
+  <script src="app.js"></script>
+
+</body>
+</html>
